@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHLOE E. AGUAS // Official Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;900&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --black: #050505;
+            --pink: #ff1493;
+            --hot-pink: #ff69b4;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 20, 147, 0.3);
+            --text-main: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: default;
+        }
+
+        body {
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 100%);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- HEADER SECTION --- */
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(255, 20, 147, 0.1), transparent);
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 10vw, 6rem);
+            font-weight: 900;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fff, var(--pink), #fff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer { to { background-position: 200% center; } }
+
+        /* --- PROFILE IMAGE FRAME (500% WOW) --- */
+        .profile-container {
+            position: relative;
+            width: 260px;
+            height: 320px;
+            margin: -100px auto 50px;
+            padding: 8px;
+            background: linear-gradient(135deg, var(--pink), transparent, var(--pink));
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(255, 20, 147, 0.4);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            background: #222;
+        }
+
+        /* --- MAIN CONTENT --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: 0.4s;
+        }
+
+        .glass-card:hover {
+            border-color: var(--pink);
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.1);
+        }
+
+        h2 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.8rem;
+            color: var(--pink);
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item label { color: #888; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; display: block; }
+        .info-item span { font-size: 1.2rem; font-weight: 700; color: #fff; }
+
+        .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .tag { padding: 5px 15px; background: rgba(255, 20, 147, 0.1); border: 1px solid var(--glass-border); border-radius: 50px; font-size: 0.85rem; }
+
+        /* --- SKILLS --- */
+        .skill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: var(--pink);
+            color: white;
+            border-radius: 50px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-family: 'Montserrat';
+        }
+
+        /* --- JAVASCRIPT SECTION (FROM BOOK) --- */
+        .magic-section {
+            text-align: center;
+            padding: 40px;
+            border: 2px dashed var(--glass-border);
+            border-radius: 25px;
+        }
+
+        #sample {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            color: #ccc;
+        }
+
+        .btn-magic {
+            background: transparent;
+            border: 2px solid var(--pink);
+            color: var(--pink);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-magic:hover {
+            background: var(--pink);
+            color: white;
+            box-shadow: 0 0 30px var(--pink);
+        }
+
+        /* --- CONTACT FORM --- */
+        form { display: grid; gap: 15px; }
+        input, textarea {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+            border-radius: 12px;
+            color: white;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus { outline: none; border-color: var(--pink); background: rgba(255,255,255,0.1); }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 50px;
+            font-size: 0.7rem;
+            opacity: 0.5;
+            letter-spacing: 3px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            header h1 { font-size: 3rem; }
+            .profile-container { width: 200px; height: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p style="font-family: 'Syncopate'; font-size: 0.6rem; letter-spacing: 8px; color: var(--pink);">Official Interactive Webpage</p>
+        <h1>CHLOE E. AGUAS</h1>
+    </header>
+
+    <div class="profile-container">
+        <!-- PALITAN MO YUNG 'src' NG ACTUAL FILENAME NG PICTURE MO -->
+        <img src="capture.png" alt="Chloe E. Aguas" class="profile-img">
+    </div>
+
+    <div class="container">
+
+        <!-- ABOUT ME SECTION -->
+        <div class="glass-card">
+            <h2><i class="fa-solid fa-user"></i> About Me</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <label>Full Name</label>
+                    <span>Chloe E. Aguas</span>
+                </div>
+                <div class="info-item">
+                    <label>Birth Date</label>
+                    <span>October 1, 2010</span>
+                </div>
+                <div class="info-item">
+                    <label>Age</label>
+                    <span>15 Years Old</span>
+                </div>
+                <div class="info-item">
+                    <label>Parents</label>
+                    <span>Resty & Rowena Aguas</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <label style="font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 2px;">Likes</label>
+                <div class="tags">
+                    <div class="tag">Cats</div>
+                    <div class="tag">Pink</div>
+                    <div class="tag">Rom-com Movies</div>
+                    <div class="tag">Music</div>
+                    <div class="tag">Sushi</div>
+                    <div class="tag">Fries</div>
+                    <div class="tag">Sweet Foods</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <label style="font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 2px;">Dislikes</label>
+                <div class="tags" style="opacity: 0.6;">
+                    <div class="tag">Seafood</div>
+                    <div class="tag">Insects</div>
+                    <div class="tag">Hot Places</div>
+                    <div class="tag">Dark Places</div>
+                    <div class="tag">Dirty Places</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SKILLS SECTION -->
+        <div class="glass-card">
+            <h2><i class="fa-solid fa-star"></i> Skills</h2>
+            <div class="skill-badge">
+                <i class="fa-solid fa-utensils"></i>
+                Cooking
+            </div>
+        </div>
+
+        <!-- JAVASCRIPT INTERACTIVE SECTION (BOOK VERSION) -->
+        <div class="glass-card magic-section">
+            <h2><i class="fa-solid fa-wand-sparkles"></i> Interactive Feature</h2>
+            <!-- DITO GINAMIT ANG CODE SA LIBRO-->
+            <p id="sample">Look at this button!</p>
+            <button class="btn-magic" type="button" onclick="myFunction()">Click here</button>
+        </div>
+
+        <!-- CONTACT FORM SECTION -->
+        <div class="glass-card">
+            <h2><i class="fa-solid fa-envelope"></i> Contact Me</h2>
+            <form id="contactForm" onsubmit="handleForm(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn-magic" style="width: 100%; background: var(--pink); color: white;">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2025 CHLOE E. AGUAS // PERFORMANCE TASK
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        
+        function myFunction() {
+            document.getElementById("sample").innerHTML = "It's magic";
+            // style
+            document.getElementById("sample").style.color = "#ff1493";
+            document.getElementById("sample").style.fontWeight = "bold";
+        }
+
+        // 2. Alert message para sa Contact Form
+        function handleForm(event) {
+            event.preventDefault(); // Para hindi mag-reload ang page
+            alert("Thank you! Your message has been submitted successfully. ✨");
+            document.getElementById("contactForm").reset(); // I-clear ang form
+        }
+    </script>
+
+</body>
+</html>
